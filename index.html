@@ -1,153 +1,316 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Puru Soni - Product Manager, App Developer, Founder of PlayConnect & Personal Sported. Building user-centric digital products with React Native, Flutter, and Agile leadership."/>
+  <meta name="keywords" content="Product Manager, Project Manager, App Developer, React Native, Flutter, UI/UX, EdTech, Jaipur"/>
+  <meta name="author" content="Puru Soni"/>
+  <meta property="og:title" content="Puru Soni | Product Manager • App Developer • Founder"/>
+  <meta property="og:description" content="Crafting impactful digital experiences in edtech, fintech, and sports technology."/>
+  <meta property="og:image" content="https://via.placeholder.com/1200x630/141414/e50914?text=Puru+Soni+Portfolio"/>
+  <meta property="og:url" content="https://yourdomain.com"/>
+  <meta name="twitter:card" content="summary_large_image"/>
   <title>Puru Soni | Product Manager • App Developer • Founder</title>
-  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS via CDN (for rapid prototyping & production-grade utility classes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            netflix: {
+              red: '#E50914',
+              dark: '#141414',
+              gray: '#221F1F',
+            },
+            primary: '#E50914',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Bebas Neue', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <style>
+    :root {
+      --bg: #141414;
+      --text: #ffffff;
+      --accent: #E50914;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+    }
+    .glass {
+      background: rgba(34, 31, 31, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .poster {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .poster:hover {
+      transform: scale(1.08) translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.8);
+    }
+    .hero-gradient {
+      background: linear-gradient(to top, var(--bg), transparent 70%);
+    }
+    .carousel-slide {
+      transition: opacity 0.8s ease;
+    }
+    .dot.active {
+      background-color: var(--accent) !important;
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <div class="logo">PURU SONI</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
-      <a href="https://www.linkedin.com/in/puru-soni-07076a194/" target="_blank">LinkedIn</a>
-      <a href="https://www.behance.net/purusoni1" target="_blank">Behance</a>
-    </nav>
+<body class="antialiased">
+
+  <!-- Header / Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" id="header">
+    <div class="container mx-auto px-6 py-5 flex justify-between items-center">
+      <a href="#" class="text-4xl font-display text-accent tracking-wider">PURU SONI</a>
+      <nav class="hidden md:flex items-center space-x-10">
+        <a href="#about" class="text-lg font-medium hover:text-accent transition-colors">About</a>
+        <a href="#projects" class="text-lg font-medium hover:text-accent transition-colors">Projects</a>
+        <a href="#experience" class="text-lg font-medium hover:text-accent transition-colors">Experience</a>
+        <a href="#skills" class="text-lg font-medium hover:text-accent transition-colors">Skills</a>
+        <a href="https://www.linkedin.com/in/puru-soni-07076a194/" target="_blank" class="text-lg font-medium hover:text-accent transition-colors">LinkedIn</a>
+        <a href="https://www.behance.net/purusoni1" target="_blank" class="text-lg font-medium hover:text-accent transition-colors">Behance</a>
+      </nav>
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-3xl focus:outline-none">
+        ☰
+      </button>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Product Manager • App Developer • Founder</h1>
-      <p>Building user-centric digital products | React Native, Flutter, Agile Leadership | PlayConnect & SkilliZee</p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn primary">Explore My Work</a>
-        <a href="mailto:purusoni96@gmail.com" class="btn secondary">Contact Me</a>
-      </div>
-    </div>
-    <div class="hero-gradient"></div>
-  </section>
-<!-- Carousel Container -->
-<div class="carousel-container">
-  <div class="carousel-slide">
-    <img src="./finwall.png" alt="FinWallet App" />
-    <div class="carousel-caption">FinWallet – Personal Finance App</div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-95 z-40 flex flex-col justify-center items-center space-y-8 text-2xl">
+    <a href="#about" class="hover:text-accent transition">About</a>
+    <a href="#projects" class="hover:text-accent transition">Projects</a>
+    <a href="#experience" class="hover:text-accent transition">Experience</a>
+    <a href="#skills" class="hover:text-accent transition">Skills</a>
+    <a href="https://www.linkedin.com/in/puru-soni-07076a194/" target="_blank" class="hover:text-accent transition">LinkedIn</a>
+    <a href="https://www.behance.net/purusoni1" target="_blank" class="hover:text-accent transition">Behance</a>
+    <button id="close-menu" class="text-4xl mt-10">&times;</button>
   </div>
-  <div class="carousel-slide">
-    <img src="./saasdash.png" alt="SaaS Dashboard" />
-    <div class="carousel-caption">SaaS Dashboard – LMS / Admin Interface</div>
-  </div>
-  <div class="carousel-slide">
-    <img src="./Screenshot 2025-12-26 202836.png" alt="Project Screenshot" />
-    <div class="carousel-caption">Project Screenshot – UI/UX Design</div>
-  </div>
-</div>
 
-<!-- Navigation Dots -->
-<div class="carousel-dots">
-  <span class="dot active" onclick="currentSlide(0)"></span>
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-</div>
-
-<!-- Previous / Next Buttons -->
-<button class="carousel-prev" onclick="changeSlide(-1)">❮</button>
-<button class="carousel-next" onclick="changeSlide(1)">❯</button>
-  <!-- About Row -->
-  <section id="about" class="row">
-    <h2 class="row-title">About Me</h2>
-    <div class="row-content">
-      <div class="about-card">
-        <p>Results-driven Product & Project Manager with experience leading app development and edtech platforms. Skilled in roadmapping, cross-functional teams, user research, and delivering MVPs using Agile.</p>
-        <p>Founder of PlayConnect Solutions (venue booking & sports app) and Personal Sported. Passionate about sports, innovation, and creating impact through technology.</p>
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center justify-center pt-20">
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1557683316-973673baf926?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center opacity-30"></div>
+    <div class="hero-gradient absolute inset-0"></div>
+    <div class="relative z-10 text-center px-6 max-w-5xl">
+      <h1 class="text-6xl md:text-8xl font-display text-accent mb-6 tracking-tight">
+        Product Manager • App Developer • Founder
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto">
+        Building user-centric digital products in edtech, fintech & sports technology with React Native, Flutter & Agile leadership
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a href="#projects" class="btn bg-accent hover:bg-red-700 text-white px-10 py-5 rounded-lg text-xl font-medium transition">Explore My Work</a>
+        <a href="mailto:purusoni96@gmail.com" class="btn border-2 border-white hover:bg-white hover:text-black px-10 py-5 rounded-lg text-xl font-medium transition">Contact Me</a>
       </div>
     </div>
   </section>
 
-  <!-- Projects Row -->
-  <section id="projects" class="row">
-    <h2 class="row-title">My Projects</h2>
-    <div class="row-content scrollable">
-      <div class="poster">
-        <img src="./bookvenue.png" alt="Venue Booking App"/>
-        <div class="poster-overlay">
-          <h3>Venue Booking Platform</h3>
-          <p>End-to-end mobile app for booking sports venues. Led design & project management.</p>
-          <a href="https://www.behance.net/purusoni1" target="_blank">View on Behance</a>
+  <!-- Featured Carousel -->
+  <section class="py-20 bg-gradient-to-b from-transparent to-netflix-dark">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-display text-center mb-12">Featured Work</h2>
+      <div class="carousel-container relative max-w-5xl mx-auto">
+        <!-- Slides -->
+        <div class="carousel-slide opacity-0">
+          <img src="./finwall.png" alt="FinWallet App" class="w-full rounded-xl shadow-2xl"/>
+          <div class="carousel-caption absolute bottom-6 left-6 glass px-6 py-3 rounded-lg text-xl">FinWallet – Personal Finance App</div>
         </div>
-      </div>
-      <div class="poster">
-        <img src="./finwallet.png" alt="FinWallet"/>
-        <div class="poster-overlay">
-          <h3>FinWallet</h3>
-          <p>Personal finance app with budgeting & transaction tracking. UI/UX focused prototype.</p>
-          <a href="https://www.behance.net/purusoni1" target="_blank">View on Behance</a>
+        <div class="carousel-slide opacity-0">
+          <img src="./saasdash.png" alt="SaaS Dashboard" class="w-full rounded-xl shadow-2xl"/>
+          <div class="carousel-caption absolute bottom-6 left-6 glass px-6 py-3 rounded-lg text-xl">SaaS Dashboard – LMS / Admin Interface</div>
         </div>
-      </div>
-      <div class="poster">
-        <img src="./lmsdash.png" alt="LMS Dashboard"/>
-        <div class="poster-overlay">
-          <h3>LMS Dashboard</h3>
-          <p>EdTech learning management dashboard for virtual internships & courses.</p>
-          <a href="https://www.behance.net/purusoni1" target="_blank">View on Behance</a>
+        <div class="carousel-slide opacity-0">
+          <img src="./Screenshot 2025-12-26 202836.png" alt="Project Screenshot" class="w-full rounded-xl shadow-2xl"/>
+          <div class="carousel-caption absolute bottom-6 left-6 glass px-6 py-3 rounded-lg text-xl">UI/UX Design Showcase</div>
         </div>
+
+        <!-- Controls -->
+        <button class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-accent text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl transition">❮</button>
+        <button class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-accent text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl transition">❯</button>
       </div>
-      <div class="poster">
-        <img src="./socialmedia.png" alt="Sports Networking App"/>
-        <div class="poster-overlay">
-          <h3>Sports Networking App</h3>
-          <p>Community platform for sports enthusiasts, events & updates.</p>
-          <a href="https://www.behance.net/purusoni1" target="_blank">View on Behance</a>
-        </div>
+      <div class="carousel-dots flex justify-center mt-6 space-x-3">
+        <span class="dot w-4 h-4 rounded-full bg-gray-500 hover:bg-accent cursor-pointer transition"></span>
+        <span class="dot w-4 h-4 rounded-full bg-gray-500 hover:bg-accent cursor-pointer transition"></span>
+        <span class="dot w-4 h-4 rounded-full bg-gray-500 hover:bg-accent cursor-pointer transition"></span>
       </div>
-      <!-- Add more posters as needed -->
     </div>
   </section>
 
-  <!-- Experience Row -->
-  <section id="experience" class="row">
-    <h2 class="row-title">Experience</h2>
-    <div class="row-content">
-      <div class="exp-card">
-        <h3>Product Manager - SkilliZee</h3>
-        <p>Jul 2025 – Present</p>
-        <p>Leading product strategy for edtech platform with virtual internships.</p>
+  <!-- About -->
+  <section id="about" class="py-24 bg-netflix-dark">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h2 class="text-5xl font-display text-center mb-16">About Me</h2>
+      <div class="glass rounded-2xl p-12 text-lg leading-relaxed">
+        <p class="mb-6">
+          Results-driven Product & Project Manager with deep experience leading end-to-end app development and edtech platforms.
+          I specialize in roadmapping, cross-functional collaboration, user research, MVP delivery, and Agile execution.
+        </p>
+        <p>
+          Founder of <strong>PlayConnect Solutions</strong> (sports venue booking & media platform) and <strong>Personal Sported</strong>.
+          Passionate about sports, innovation, and leveraging technology to create meaningful impact.
+        </p>
       </div>
-      <div class="exp-card">
-        <h3>Project Manager / Founder - PlayConnect Solutions</h3>
-        <p>Jan 2023 – Jul 2025</p>
-        <p>Managed app development projects using Flutter & React Native.</p>
-      </div>
-      <!-- Add more -->
     </div>
   </section>
 
-  <!-- Skills Row -->
-  <section id="skills" class="row">
-    <h2 class="row-title">Skills</h2>
-    <div class="row-content skills-grid">
-      <div class="skill">Product Management</div>
-      <div class="skill">Agile / Scrum</div>
-      <div class="skill">React Native</div>
-      <div class="skill">Flutter</div>
-      <div class="skill">Figma / UI/UX</div>
-      <div class="skill">Stakeholder Management</div>
-      <div class="skill">iOS / Android Dev</div>
-      <div class="skill">Project Planning</div>
+  <!-- Projects -->
+  <section id="projects" class="py-24">
+    <div class="container mx-auto px-6">
+      <h2 class="text-5xl font-display text-center mb-16">My Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div class="poster relative overflow-hidden rounded-xl shadow-2xl group">
+          <img src="./bookvenue.png" alt="Venue Booking App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+            <h3 class="text-2xl font-bold mb-2">Venue Booking Platform</h3>
+            <p class="text-gray-300 mb-4">End-to-end mobile app for booking sports venues. Led design & project management.</p>
+            <a href="https://www.behance.net/purusoni1" target="_blank" class="text-accent font-medium hover:underline">View on Behance →</a>
+          </div>
+        </div>
+
+        <div class="poster relative overflow-hidden rounded-xl shadow-2xl group">
+          <img src="./finwallet.png" alt="FinWallet" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+            <h3 class="text-2xl font-bold mb-2">FinWallet</h3>
+            <p class="text-gray-300 mb-4">Personal finance app with budgeting & transaction tracking. UI/UX focused prototype.</p>
+            <a href="https://www.behance.net/purusoni1" target="_blank" class="text-accent font-medium hover:underline">View on Behance →</a>
+          </div>
+        </div>
+
+        <div class="poster relative overflow-hidden rounded-xl shadow-2xl group">
+          <img src="./lmsdash.png" alt="LMS Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+            <h3 class="text-2xl font-bold mb-2">LMS Dashboard</h3>
+            <p class="text-gray-300 mb-4">EdTech learning management dashboard for virtual internships & courses.</p>
+            <a href="https://www.behance.net/purusoni1" target="_blank" class="text-accent font-medium hover:underline">View on Behance →</a>
+          </div>
+        </div>
+
+        <div class="poster relative overflow-hidden rounded-xl shadow-2xl group">
+          <img src="./socialmedia.png" alt="Sports Networking App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
+            <h3 class="text-2xl font-bold mb-2">Sports Networking App</h3>
+            <p class="text-gray-300 mb-4">Community platform for sports enthusiasts, events & updates.</p>
+            <a href="https://www.behance.net/purusoni1" target="_blank" class="text-accent font-medium hover:underline">View on Behance →</a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 Puru Soni | Made with ❤️ in Jaipur</p>
+  <!-- Experience -->
+  <section id="experience" class="py-24 bg-netflix-dark">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h2 class="text-5xl font-display text-center mb-16">Professional Experience</h2>
+      <div class="space-y-12">
+        <div class="glass rounded-2xl p-10">
+          <h3 class="text-3xl font-semibold mb-3">Product Manager – SkilliZee</h3>
+          <p class="text-gray-400 mb-4">July 2025 – Present</p>
+          <p class="text-lg">Leading product strategy for an edtech platform focused on virtual internships and skill development for ages 8-16.</p>
+        </div>
+        <div class="glass rounded-2xl p-10">
+          <h3 class="text-3xl font-semibold mb-3">Project Manager / Founder – PlayConnect Solutions</h3>
+          <p class="text-gray-400 mb-4">January 2023 – July 2025</p>
+          <p class="text-lg">Managed full-cycle app development projects using Flutter & React Native for clients across e-commerce, booking, and sports domains.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="py-24">
+    <div class="container mx-auto px-6 max-w-5xl">
+      <h2 class="text-5xl font-display text-center mb-16">Core Skills</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="glass rounded-xl p-8 text-center font-medium text-xl">Product Management</div>
+        <div class="glass rounded-xl p-8 text-center font-medium text-xl">Agile / Scrum</div>
+        <div class="glass rounded-xl p-8 text-center font-medium text-xl">React Native</div>
+        <div class="glass rounded-xl p-8 text-center font-medium text-xl">Flutter</div>
+        <div class="glass rounded-xl p-8 text-center font-medium text-xl">Figma / UI/UX Design</div>
+        <div class="glass rounded-xl p-8 text-center font-medium text-xl">Stakeholder Management</div>
+        <div class="glass rounded-xl p-8 text-center font-medium text-xl">iOS / Android Development</div>
+        <div class="glass rounded-xl p-8 text-center font-medium text-xl">Project Planning</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 bg-black text-center text-gray-500">
+    <p>© 2025 Puru Soni | Crafted with precision in Jaipur</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Scripts -->
+  <script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('bg-black/90', window.scrollY > 100);
+    });
+
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-menu');
+
+    menuBtn.addEventListener('click', () => menu.classList.toggle('hidden'));
+    closeBtn.addEventListener('click', () => menu.classList.add('hidden'));
+
+    // Carousel
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(n) {
+      slides.forEach(s => s.style.opacity = '0');
+      dots.forEach(d => d.classList.remove('active'));
+      slides[n].style.opacity = '1';
+      dots[n].classList.add('active');
+    }
+
+    function changeSlide(n) {
+      slideIndex = (slideIndex + n + slides.length) % slides.length;
+      showSlide(slideIndex);
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        slideIndex = i;
+        showSlide(i);
+      });
+    });
+
+    // Auto-slide
+    setInterval(() => changeSlide(1), 6000);
+
+    // Initial show
+    showSlide(0);
+  </script>
 </body>
 </html>
