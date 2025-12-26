@@ -34,7 +34,32 @@
     </div>
     <div class="hero-gradient"></div>
   </section>
-<img src="./finwall.png"/>
+<!-- Carousel Container -->
+<div class="carousel-container">
+  <div class="carousel-slide">
+    <img src="./finwall.png" alt="FinWallet App" />
+    <div class="carousel-caption">FinWallet – Personal Finance App</div>
+  </div>
+  <div class="carousel-slide">
+    <img src="./saasdash.png" alt="SaaS Dashboard" />
+    <div class="carousel-caption">SaaS Dashboard – LMS / Admin Interface</div>
+  </div>
+  <div class="carousel-slide">
+    <img src="./Screenshot 2025-12-26 202836.png" alt="Project Screenshot" />
+    <div class="carousel-caption">Project Screenshot – UI/UX Design</div>
+  </div>
+</div>
+
+<!-- Navigation Dots -->
+<div class="carousel-dots">
+  <span class="dot active" onclick="currentSlide(0)"></span>
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+</div>
+
+<!-- Previous / Next Buttons -->
+<button class="carousel-prev" onclick="changeSlide(-1)">❮</button>
+<button class="carousel-next" onclick="changeSlide(1)">❯</button>
   <!-- About Row -->
   <section id="about" class="row">
     <h2 class="row-title">About Me</h2>
@@ -67,7 +92,7 @@
         </div>
       </div>
       <div class="poster">
-        <img src="./groupchat.png" alt="LMS Dashboard"/>
+        <img src="./lmsdash.png" alt="LMS Dashboard"/>
         <div class="poster-overlay">
           <h3>LMS Dashboard</h3>
           <p>EdTech learning management dashboard for virtual internships & courses.</p>
